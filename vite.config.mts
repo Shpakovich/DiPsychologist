@@ -16,6 +16,7 @@ export default defineConfig({
   plugins: [
     VueRouter({
       dts: 'src/typed-router.d.ts',
+      routesFolder: 'src/pages' // Явное указание пути
     }),
     Layouts(),
     AutoImport({
@@ -53,6 +54,17 @@ export default defineConfig({
       },
     }),
   ],
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      'vuetify'
+    ],
+    exclude: [
+      'vite',
+      '@vitejs/plugin-vue'
+    ]
+  },
   define: { 'process.env': {} },
   resolve: {
     alias: {

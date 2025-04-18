@@ -1,5 +1,10 @@
 {
   "files": [],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "types": ["vite/client"]  // Добавьте это
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [
     {
       "path": "./tsconfig.node.json"
