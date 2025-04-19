@@ -177,7 +177,27 @@
      .text-h4 {
        font-size: 1.5rem!important;
      }
+
+     .img-about_mobile {
+       max-height: 482px;
+       object-fit: cover;
+     }
   }
+
+   @media screen and (min-width: 900px) {
+     .mobile-header {
+       display: none!important;
+     }
+     .main-img-mobile {
+       display: none!important;
+     }
+     .img-about_mobile {
+       display: none!important;
+     }
+     .work-popup {
+       padding: 32px!important;
+     }
+   }
 
    @media screen and (max-width: 900px) {
      h2 {
@@ -291,6 +311,10 @@
 
      .header_link {
        font-size: 24px !important;
+     }
+     .aboutBlock_image {
+       max-height: 502px;
+       object-fit: cover;
      }
    }
 </style>
