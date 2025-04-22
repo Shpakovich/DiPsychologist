@@ -62,7 +62,7 @@ button:before
 
 button:hover:before
   top: -30px
-  left: -30px
+  left: -15px
 
 .tg-text
   color: #EEEEEE
