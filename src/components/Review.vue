@@ -15,7 +15,6 @@ defineProps<{
     <v-carousel
         height="auto"
         class="review-carousel"
-        show-arrows="hover"
         hide-delimiters
     >
       <v-carousel-item v-for="(reviewList, index) in reviewList" :key="index">
