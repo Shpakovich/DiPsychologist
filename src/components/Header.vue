@@ -12,11 +12,11 @@ const props = defineProps<{
 
 const handleClick = (link: any) => {
   if (link === '#HowCanHelp') {
-    props.setHandler(1)
     setTimeout(()=> {
-      const figureItOutTogetherElement = document.getElementById('figureItOutTogether');
-      figureItOutTogetherElement.scrollIntoView({block: "end", inline: "nearest"});
+      const figureItOutTogetherElement = document.getElementById('AboutWork');
+      figureItOutTogetherElement.scrollIntoView({block: "center", inline: "nearest"});
     })
+    setTimeout(()=> props.setHandler(1), 1000)
   }
 }
 

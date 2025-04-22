@@ -324,7 +324,7 @@
     <section class="pa-8">
       <MainInfo />
       <AboutMe id="AboutMe" />
-      <AboutMyWork id="AboutWork" :about-blocks="aboutWorkBlocks" :active-block-index="activeBlockIndex" :set-handler="setActiveBlockIndex" />
+      <AboutMyWork v-model="parentValue" id="AboutWork" :about-blocks="aboutWorkBlocks" :active-block-index="activeBlockIndex" :set-handler="setActiveBlockIndex" />
       <Quote />
       <Services id="Services" />
       <Review :review-list="reviewList" id="Review" />
@@ -406,9 +406,11 @@ const reviewList= [{
 }]
 
 const activeBlockIndex = ref(null);
+const parentValue = ref(false)
 
 const setActiveBlockIndex = (index)=> {
   activeBlockIndex.value = index
+  parentValue.value = true
   console.error(activeBlockIndex.value, index)
 }
 </script>

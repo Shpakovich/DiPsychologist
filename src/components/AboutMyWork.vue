@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import line from '../assets/vector/line1.svg'
 
 const props = defineProps<{
   aboutBlocks: Array<any>
   setHandler: any
   activeBlockIndex?: any
+  modelValue: any
 }>()
 
-const dialog = ref(false)
+const emit = defineEmits(['update:modelValue'])
+
+const dialog = computed({
+  get: () => props.modelValue,
+  set: (val) => emit('update:modelValue', val)
+})
 
 </script>
 
@@ -19,7 +24,7 @@ const dialog = ref(false)
     </p>
     <img class="vector-icon" :src="line" alt="">
     <div class="d-flex justify-space-between mb-4 about-blocks">
-      <div v-for="({title, img}, index) of aboutBlocks" class="d-flex flex-column block" @click="dialog = true">
+      <div v-for="({title, img}, index) of aboutBlocks" class="d-flex flex-column block">
         <img
             :src="img"
             alt=""
@@ -49,7 +54,7 @@ const dialog = ref(false)
               icon="mdi-close"
               variant="flat"
               className="close-btn"
-              @click="dialog = false"
+              @click="emit('update:modelValue', false)"
           ></v-btn>
         </template>
       </v-card>
