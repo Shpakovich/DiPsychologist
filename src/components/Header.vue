@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { defineComponent } from 'vue';
 import {a} from "vite/dist/node/types.d-aGj9QkWt";
-import FigureItOutTogether from "@/components/AboutWorkBlock/FigureItOutTogether.vue";
 import ActionBtnSecond from "@/components/Buttons/ActionBtnSecond.vue";
 
 const props = defineProps<{
@@ -11,6 +9,7 @@ const props = defineProps<{
 }>()
 
 const handleClick = (link: any) => {
+  changeFullScreenHeaderState()
   if (link === '#HowCanHelp') {
     setTimeout(()=> {
       const figureItOutTogetherElement = document.getElementById('AboutWork');
@@ -20,33 +19,27 @@ const handleClick = (link: any) => {
   }
 }
 
+const isMenuOpen = ref(false)
 const mobileMenu = ref(null)
 const hamburger = ref(null)
-const parent = ref(null)
-const headerLink = ref(null)
 
-onMounted(() => {
-  // Доступ к элементу через .value
-  console.log(mobileMenu.value)
-
-  // Можно добавить другие операции с DOM
-
-  hamburger.value?.addEventListener('click', function() {
-    var isOpening = mobileMenu.value.classList.contains('open')
-
-    this.classList.toggle('is-active')
-    mobileMenu.value.classList.toggle('open')
-
-    if (isOpening) {
-      parent.value.style.overflow = "hidden"
-    } else {
-      parent.value.style.overflow = "auto"
-    }
-  })
+const mobileMenuIcon = computed(() => {
+  return isMenuOpen.value ? 'mdi-close' : 'mdi-menu'
 })
 
-defineExpose({
-  parent
+const changeFullScreenHeaderState = ()=> {
+  isMenuOpen.value = !isMenuOpen.value;
+  mobileMenu.value.classList?.toggle('open')
+}
+
+onMounted(() => {
+  hamburger.value?.addEventListener('click', ()=> changeFullScreenHeaderState())
+
+  window.addEventListener('scroll', ()=>{
+    if (isMenuOpen.value) {
+      changeFullScreenHeaderState();
+    }
+  })
 })
 
 </script>
@@ -60,9 +53,9 @@ defineExpose({
   </div>
 
   <div class="mobile-header">
-    <button id="hamburger" class="hamburger hamburger--elastic" ref="hamburger" style="display: none; color: #343B4B" type="button">
+    <button id="hamburger" class="hamburger hamburger--elastic" ref="hamburger" type="button">
       <span class="hamburger-box">
-        <v-icon icon="mdi-menu" size="36"/>
+        <v-icon :icon="mobileMenuIcon" size="36" color="#8EA1D0"/>
       </span>
     </button>
     <ActionBtnSecond class="mobile-action-btn" />
@@ -71,7 +64,7 @@ defineExpose({
     <div class="mobile-menu" ref="mobileMenu">
       <ul class="mobile-menu-content">
         <li v-for="({text, link}) of headerList" class="is-active">
-          <a :href='link' ref="headerLink" class="header_link pa-2" @click="handleClick(link)">{{ text }}</a>
+          <a :href='link' class="header_link pa-2" @click="handleClick(link)">{{ text }}</a>
         </li>
       </ul>
     </div>
@@ -81,14 +74,12 @@ defineExpose({
 <style scoped lang="sass">
 // Variables
 $primary: #fff
-$secondary: red
 $text-color: #fff
 $background-color: #664242
 $menu-background: #EEEEEE
 $menu-color: #8EA1D0
 $menu-color-link: $menu-color
 $hamburger-color: $menu-color
-$hamburger-color-open: $background-color
 
 // Global styles
 *
@@ -96,7 +87,6 @@ $hamburger-color-open: $background-color
   box-sizing: border-box
 
 html, body
-  background: $background-color
   color: $text-color
   font-size: 18px
   font-family: sans-serif
@@ -111,9 +101,9 @@ a
   position: absolute
 
 .hamburger
+  color: #343B4B
   &.is-active
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
-      background-color: $hamburger-color-open
       width: 100%
 
   &-inner
