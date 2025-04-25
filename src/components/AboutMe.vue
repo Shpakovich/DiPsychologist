@@ -63,10 +63,10 @@ import squiggle1 from '../assets/vector/squiggle1.svg'
   transform: rotateX(48deg)
   width: 432px
   left: -24px
+  top: -61px
 
 .img-about
   height: fit-content
-  margin-top: 34px
   margin-bottom: 24px
 
 .main-title
