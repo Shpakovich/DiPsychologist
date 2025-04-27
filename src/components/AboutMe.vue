@@ -79,5 +79,5 @@ ul
 .img-about_mobile
   height: auto
   width: 100%
-  padding-bottom: 16px
+  margin-bottom: 16px
 </style>

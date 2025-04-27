@@ -185,6 +185,12 @@
   }
 
    @media screen and (min-width: 900px) {
+     .aboutMe_block {
+       margin-bottom: 124px
+     }
+     .mobile-only {
+       display: none!important;
+     }
      .mobile-header {
        display: none!important;
      }
@@ -200,6 +206,14 @@
    }
 
    @media screen and (max-width: 900px) {
+     .desktop-only {
+       display: none !important;
+     }
+
+     .aboutMe_block {
+       margin-bottom: 64px
+     }
+
      h2 {
        font-size: 2rem !important;
      }
