@@ -185,6 +185,14 @@
   }
 
    @media screen and (min-width: 900px) {
+     .block:hover {
+       .aboutBlock_image {
+         filter: none
+       }
+       .work-btn {
+         color: #8EA1D0!important
+       }
+     }
      .aboutMe_block {
        margin-bottom: 124px
      }
@@ -248,7 +256,6 @@
 
      .work-popup {
        padding: 24px;
-       padding-bottom: 84px!important;
      }
 
      .v-carousel__controls {
@@ -331,6 +338,15 @@
        object-fit: cover;
      }
    }
+
+   @media screen and (max-width: 500px) {
+     .vector-icon {
+       top: -64px !important;
+     }
+     #AboutWork {
+       margin-top: 64px!important;
+     }
+   }
 </style>
 <template>
   <div class="container" ref="parentElement">
@@ -378,7 +394,7 @@ const headerLinks = [
 
 const aboutWorkBlocks = [
   {
-    title: 'Вы обращаетесь ко мне',
+    title: 'Вы обращаетесь ко\u00A0мне',
     active: false,
     img: aboutWork,
     textBlock: YourAddressingMe

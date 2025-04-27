@@ -14,8 +14,8 @@ defineProps<{
         <p class="text-body-1 mb-8">{{ description }}</p>
         <section v-if="prices.length === 1">
           <div class="d-flex flex-row justify-space-between pb-6">
-            <pre class="text-body-1">{{ prices[0].duration }}</pre>
-            <p class="text-subtitle-1">Онлайн</p>
+            <pre class="text-body-1 duration">{{ prices[0].duration }}</pre>
+            <p class="text-subtitle-1 online">Онлайн</p>
           </div>
           <div class="d-flex flex-row justify-space-between">
             <ActionBtn />
@@ -37,4 +37,15 @@ defineProps<{
 
 .service-card_content
   width: 50%
+
+.duration
+  flex: 1
+  min-width: 0
+  word-wrap: break-word
+  overflow-wrap: break-word
+  white-space: normal
+  padding-right: 15px
+
+.online
+  flex: 0 0 66px
 </style>

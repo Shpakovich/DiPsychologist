@@ -19,7 +19,7 @@ const dialog = computed({
 
 <template>
   <div class="mb-12 position-relative">
-    <p class="text-h2 mb-8 main-title">
+    <p class="text-h2 main-title">
       КАК Я РАБОТАЮ
     </p>
     <img class="vector-icon" :src="line" alt="">
@@ -73,9 +73,6 @@ const dialog = computed({
 .work-popup .v-window__right
   margin-right: -62px
 
-.work-popup .pop-up_carousel
-  overflow: visible!important
-
 .aboutBlock_image
   filter: brightness(80%)
 
@@ -115,12 +112,17 @@ const dialog = computed({
 
 .main-title
   font-weight: 100!important
+  margin-bottom: 32px
 
 .work-title_mobile
   position: absolute
-  top: 10%
+  padding: 32px
+  top: 5%
   width: 100%
   text-align: center
   color: white
-  font-size: 24px
+  font-size: 28px
+
+.v-window__container::-webkit-scrollbar
+  width: 0!important
 </style>
