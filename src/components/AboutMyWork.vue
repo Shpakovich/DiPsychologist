@@ -24,12 +24,15 @@ const dialog = computed({
     </p>
     <img class="vector-icon" :src="line" alt="">
     <div class="d-flex justify-space-between mb-4 about-blocks">
-      <div v-for="({title, img}, index) of aboutBlocks" class="d-flex flex-column block">
+      <div
+          v-for="({title, img}, index) of aboutBlocks"
+          class="d-flex flex-column block"
+          @click="setHandler(index)"
+      >
         <img
             :src="img"
             alt=""
             class="aboutBlock_image mb-4 rounded-lg cursor-pointer"
-            @click="setHandler(index)"
         >
         <p class="work-title_mobile">{{title}}</p>
         <v-btn class="work-btn" variant="text">{{title}}</v-btn>
@@ -85,11 +88,6 @@ const dialog = computed({
   column-gap: 16px
   flex: 1
   z-index: 1
-  &:hover
-    .aboutBlock_image
-      filter: none
-    .work-btn
-      color: #8EA1D0!important
 
 .vector-icon
   position: absolute
