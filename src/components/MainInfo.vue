@@ -39,12 +39,10 @@ import ActionBtn from "@/components/Buttons/ActionBtn.vue";
   letter-spacing: -0.0083333333em
 .squiggle2-icon
   position: absolute
-  //right: -24px
-  bottom: 12px
+  pointer-events: none
+  bottom: -32px
   width: 782px
   right: -112px
-  //width: 520px
-  // transform: scaleX(-1) rotateX(45deg)
 
 .main-img-mobile
   height: 350px

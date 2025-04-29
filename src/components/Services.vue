@@ -36,6 +36,7 @@ const serviceList = [{
 <style scoped lang="sass">
 .squiggle2-icon
   position: absolute
+  pointer-events: none
   transform: rotateX(45deg)
   top: -116px
   right: 0

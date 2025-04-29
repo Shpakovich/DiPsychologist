@@ -60,6 +60,7 @@ import squiggle1 from '../assets/vector/squiggle1.svg'
 
 .squiggle-vector
   position: absolute
+  pointer-events: none
   transform: rotateX(48deg)
   width: 432px
   left: -24px

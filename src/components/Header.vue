@@ -15,7 +15,7 @@ const handleClick = (link: any) => {
       const figureItOutTogetherElement = document.getElementById('AboutWork');
       figureItOutTogetherElement.scrollIntoView({block: "center", inline: "nearest"});
     })
-    setTimeout(()=> props.setHandler(1), 1000)
+    setTimeout(()=> props.setHandler(0), 1000)
   }
 }
 

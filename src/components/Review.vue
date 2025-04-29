@@ -59,6 +59,7 @@ const changeCurrentSlide = (newIndex) => {
 
 .heart-icon
   position: absolute
+  pointer-events: none
   z-index: 1
   top: 78px
   right: 284px

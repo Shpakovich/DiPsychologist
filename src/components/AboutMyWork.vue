@@ -34,7 +34,7 @@ const dialog = computed({
             alt=""
             class="aboutBlock_image mb-4 rounded-lg cursor-pointer"
         >
-        <p class="work-title_mobile">{{title}}</p>
+        <p class="work-title_mobile mobile-only">{{title}}</p>
         <v-btn class="work-btn" variant="text">{{title}}</v-btn>
       </div>
     </div>
