@@ -6,6 +6,12 @@ defineProps<{
   reviewList: any
 }>()
 
+const currentSlide = ref(0)
+
+const changeCurrentSlide = (newIndex) => {
+  currentSlide.value = newIndex
+}
+
 </script>
 
 <template>
@@ -13,11 +19,13 @@ defineProps<{
     <img class="heart-icon" :src="heart" alt="">
     <h2 class="text-h2 mt-16 mb-8 main-title">ОТЗЫВЫ КЛИЕНТОВ</h2>
     <v-carousel
+        v-model="currentSlide"
         height="auto"
         class="review-carousel"
+        show-arrows="hover"
         hide-delimiters
     >
-      <v-carousel-item v-for="(reviewList, index) in reviewList" :key="index">
+      <v-carousel-item v-for="(reviewList, reviewActiveIndex) in reviewList" :key="reviewActiveIndex">
         <div v-if="reviewList.text" class="review-block">
           <div class="review-text">
             <p>{{ reviewList.text }}</p>
@@ -36,6 +44,9 @@ defineProps<{
         </div>
       </v-carousel-item>
     </v-carousel>
+    <div class="pagination-container">
+      <div class="pagination-item" :class="{ 'active': index === currentSlide }" v-for="(reviewList, index) in reviewList" :key="index" @click="changeCurrentSlide(index)" />
+    </div>
   </section>
 </template>
 
@@ -93,4 +104,26 @@ defineProps<{
 
 .main-title
   font-weight: 100!important
+
+.pagination-container
+  display: flex
+  gap: 10px
+  justify-content: center
+  align-items: center
+  padding: 20px
+
+.pagination-item
+  width: 30px
+  height: 4px
+  background-color: #e0e0e0
+  cursor: pointer
+  transition: all 0.3s ease
+
+.pagination-item.active
+  background-color: #8EA1D0
+  height: 6px
+
+@media screen and (min-width: 900px)
+  .pagination-item:hover:not(active)
+    background-color: #a0a0a0
 </style>
