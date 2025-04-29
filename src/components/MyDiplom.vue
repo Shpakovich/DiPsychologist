@@ -26,7 +26,6 @@ const dialog = ref(false)
             class="review-carousel"
             height="auto"
             width="fit-content"
-            show-arrows="hover"
             hide-delimiters
         >
           <v-icon icon="mdi-close" color="#1F5592" class="close-button" @click="dialog = false" />
