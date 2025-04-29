@@ -6,7 +6,7 @@ import ActionBtnSecond from "@/components/Buttons/ActionBtnSecond.vue";
 <template>
   <div id="YouWillLearn">
     <p class="text-h4 mb-8 main-title">Результат</p>
-    <p class="text-body-1 mb-4">
+    <p class="text-body-1 mb-8">
       Моя задача помочь вам разобраться в себе и ситуации, вырастить в психике те качества, которые позволят справляться без моей помощи.<br>
       Я не воспринимаю терапию как «пластырь», который будет с вами всю жизнь, я считаю, что нужно «вылечить рану», чтобы отпала необходимость «заклеивать ее пластырем».<br>
       <br>

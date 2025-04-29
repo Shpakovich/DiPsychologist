@@ -320,11 +320,6 @@
        margin-left: 12px!important;
      }
 
-     .contact_title_second {
-       font-size: 24px!important;
-       padding-bottom: 52px!important;
-     }
-
      .contact_background_image {
        background-position: left!important;
        background-size: cover!important;
@@ -336,6 +331,10 @@
      .aboutBlock_image {
        max-height: 502px;
        object-fit: cover;
+     }
+     .text-body-2 {
+       font-size: 0.9rem !important;
+       line-height: 1.725rem!important;
      }
    }
 
