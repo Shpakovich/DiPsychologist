@@ -7,7 +7,7 @@ import ActionBtn from "@/components/Buttons/ActionBtn.vue";
 <template>
   <div class="d-flex justify-space-between position-relative aboutMe_block">
     <div class="aboutMe_textBlock ma-auto">
-      <h2 class="main-title pb-12">ПСИХОЛОГИЕЧСКИЕ СЕССИИ&nbsp;ОНЛАЙН</h2>
+      <h2 class="main-title pb-12">ПСИХОЛОГИЧЕСКИЕ СЕССИИ&nbsp;ОНЛАЙН</h2>
       <p class="text-subtitle-1 pb-6 mobile-only"> Для тех, кто готов менять свою жизнь к лучшему</p>
       <img :src='main' height="540" width="390" alt="Фото Диана" class="rounded-lg main-img-mobile">
       <p class="text-subtitle-1 pb-6 desktop-only">Для тех, кто готов менять свою жизнь к лучшему<br></p>

@@ -298,7 +298,7 @@
      }
 
      .text-h4 {
-       margin-bottom: 16px!important;
+       //margin-bottom: 16px!important;
      }
 
      .text-body-1 {
