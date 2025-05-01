@@ -15,6 +15,15 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/DiPsychologist/' : '/',
   plugins: [
+    {
+      name: 'umami-analytics',
+      transformIndexHtml(html) {
+      return html.replace(
+      '</head>',
+      '<script defer src="https://cloud.umami.is/script.js" data-website-id="2a9f23b3-8f84-4492-9223-f3fab2574c5b"></script></head>'
+      )
+      }
+    },
     VueRouter({
       dts: 'src/typed-router.d.ts',
       routesFolder: 'src/pages' // Явное указание пути
