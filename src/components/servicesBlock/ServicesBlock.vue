@@ -18,7 +18,7 @@ defineProps<{
             <p class="text-subtitle-1 online">Онлайн</p>
           </div>
           <div class="d-flex flex-row justify-space-between">
-            <ActionBtn />
+            <ActionBtn :context='`${title}`' />
             <p class="text-h4 ma-auto mr-0">{{ prices[0].price }}</p>
           </div>
         </section>

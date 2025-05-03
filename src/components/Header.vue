@@ -2,13 +2,20 @@
 import { ref, onMounted } from 'vue'
 import {a} from "vite/dist/node/types.d-aGj9QkWt";
 import ActionBtnSecond from "@/components/Buttons/ActionBtnSecond.vue";
+import {useUmami} from "@/composables/useUmami";
 
 const props = defineProps<{
   headerList: Array<any>
   setHandler: any
 }>()
 
-const handleClick = (link: any) => {
+const { trackEvent } = useUmami()
+
+const handleClick = ({text, link}) => {
+  trackEvent(
+      `Клик на заголовок`,
+      { context: text }
+  )
   changeFullScreenHeaderState()
   if (link === '#HowCanHelp') {
     setTimeout(()=> {
@@ -47,9 +54,9 @@ onMounted(() => {
 <template>
   <div class="d-flex justify-space-between pa-4 desktop_header">
     <div class="d-flex justify-space-around header-list">
-      <a v-for="({text, link}) of headerList" :href='link' class="header_link pa-2" @click="handleClick(link)">{{ text }}</a>
+      <a v-for="({text, link}) of headerList" :href='link' class="header_link pa-2" @click="handleClick({text, link})">{{ text }}</a>
     </div>
-    <ActionBtnSecond />
+    <ActionBtnSecond :context="'Шапка'" />
   </div>
 
   <div class="mobile-header">
@@ -58,13 +65,13 @@ onMounted(() => {
         <v-icon :icon="mobileMenuIcon" size="36" color="#8EA1D0"/>
       </span>
     </button>
-    <ActionBtnSecond class="mobile-action-btn" />
+    <ActionBtnSecond class="mobile-action-btn" :context="'Шапка'" />
 
 
     <div class="mobile-menu" ref="mobileMenu">
       <ul class="mobile-menu-content">
         <li v-for="({text, link}) of headerList" class="is-active">
-          <a :href='link' class="header_link pa-2" @click="handleClick(link)">{{ text }}</a>
+          <a :href='link' class="header_link pa-2" @click="handleClick({text, link})">{{ text }}</a>
         </li>
       </ul>
     </div>

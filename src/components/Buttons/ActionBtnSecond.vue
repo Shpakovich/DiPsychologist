@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import {getTgLink} from "@/constants";
+import {useUmami} from "@/composables/useUmami";
+
+const { trackEvent } = useUmami()
+
+const props = defineProps<{
+  context: string
+}>()
 
 const openChat = ()=> {
+  trackEvent(
+      `Кнопка 'записаться'`,
+      { context: props.context }
+  )
   window.open(getTgLink('Здравствуйте. Хочу записаться на консультацию'), '_blank')
 }
 </script>

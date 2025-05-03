@@ -376,6 +376,7 @@ import aboutWorkThird from '../assets/photo/about_work_3.jpg'
 import review1 from '../assets/review_1.jpg'
 import review2 from '../assets/review_2.jpg'
 import review3 from '../assets/review_3.jpg'
+import {useUmami} from "@/composables/useUmami";
 
 const parentElement = ref(null)
 
@@ -436,10 +437,14 @@ const reviewList= [{
 
 const activeBlockIndex = ref(null);
 const parentValue = ref(false)
+const { trackEvent } = useUmami()
 
 const setActiveBlockIndex = (index)=> {
   activeBlockIndex.value = index
   parentValue.value = true
-  console.error(activeBlockIndex.value, index)
+  trackEvent(
+      `Как я работаю`,
+      { context: aboutWorkBlocks[index].title }
+  )
 }
 </script>

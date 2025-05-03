@@ -16,7 +16,7 @@ import ActionBtn from "@/components/Buttons/ActionBtn.vue";
         Помогаю жить счастливо и легко
       </p>
       <div class="main-btn-block">
-        <ActionBtn />
+        <ActionBtn :context="'Основное инфо (1 блок)'" />
       </div>
     </div>
     <img class="squiggle2-icon" :src="vector4" alt="" />

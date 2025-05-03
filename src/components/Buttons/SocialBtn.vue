@@ -1,16 +1,24 @@
 <script setup lang="ts">
+import {useUmami} from "@/composables/useUmami";
+
 defineProps<{
   socialLink: any
 }>()
 
-const openLink = (link: string)=> {
-  window.open(link, '_blank')
+const { trackEvent } = useUmami()
+
+const openLink = (socialLink)=> {
+  trackEvent(
+      `Кнопка 'записаться'`,
+      { context: `Остались вопросы: ${socialLink.name}` }
+  )
+  window.open(socialLink.link, '_blank')
 }
 
 </script>
 
 <template>
-  <button :class="['main-btn_block', socialLink.name]" :style="{'--color': socialLink.color}" @click="openLink(socialLink.link)">
+  <button :class="['main-btn_block', socialLink.name]" :style="{'--color': socialLink.color}" @click="openLink(socialLink)">
     <text class="ma-auto tg-text">{{socialLink.name}}</text>
     <img :src="socialLink.icn" alt="" class="contact-icon" />
   </button>

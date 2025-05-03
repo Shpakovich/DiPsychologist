@@ -12,7 +12,7 @@ import ActionBtnSecond from "@/components/Buttons/ActionBtnSecond.vue";
       <br>
       Однако успех терапии в равной степени лежит и на психологе, и на клиенте. Психолог поможет, покажет, научит, но захотите ли вы менять свою жизнь, зависит только от вас. И если вы этого захотите, я точно помогу вам это сделать!
     </p>
-    <ActionBtnSecond />
+    <ActionBtnSecond :context="'Поп-ап: Результат'" />
   </div>
 </template>
 

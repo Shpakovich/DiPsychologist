@@ -27,7 +27,7 @@ const points = [
     <p class="text-body-1 mb-4">
       Все это и многое другое реально! И со мной вы в этом убедитесь
     </p>
-    <ActionBtnSecond />
+    <ActionBtnSecond :context="'Поп-ап: C чем я могу помочь'" />
   </div>
 </template>
 

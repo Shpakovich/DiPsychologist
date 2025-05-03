@@ -5,8 +5,15 @@ import BASE_MODERN_PSYCHOSOMATICS from '../assets/certificates/BASE_MODERN_PSYCH
 import intensiv from '../assets/certificates/intensiv.png'
 import {ref} from "vue";
 import BtnDiploma from "@/components/Buttons/BtnDiploma.vue";
+import {useUmami} from "@/composables/useUmami";
 
 const dialog = ref(false)
+
+const { trackEvent } = useUmami()
+
+const diplomOpen = () => {
+  trackEvent(`Кнопка 'Мои дипломы'`)
+}
 </script>
 
 <template>
@@ -17,7 +24,7 @@ const dialog = ref(false)
       v-model="dialog"
   >
     <template v-slot:activator="{ props: activatorProps }">
-      <BtnDiploma v-bind="activatorProps" />
+      <BtnDiploma v-bind="activatorProps" @click="diplomOpen()" />
     </template>
 
     <template v-slot:default>
