@@ -1,3 +1,7 @@
-/// <reference types="vite/client" />
-/// <reference types="unplugin-vue-router/client" />
-/// <reference types="vite-plugin-vue-layouts/client" />
+declare global {
+  interface Window {
+    umami?: {
+      track: (event: string, data?: Record<string, unknown>) => void
+    }
+  }
+}
