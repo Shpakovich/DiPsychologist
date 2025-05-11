@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import telegram from '../assets/photo/telegram.svg'
 import whatsapp from '../assets/photo/whatsapp.svg'
+import instagram from '../assets/photo/instagram.svg'
 import SocialBtn from "@/components/Buttons/SocialBtn.vue";
-import {getTgLink, getWALink} from "@/constants";
+import {getInstLink, getTgLink, getWALink} from "@/constants";
 
 const socialLink = [
   {
@@ -16,12 +17,18 @@ const socialLink = [
     link: getWALink(),
     icn: whatsapp,
     color: '#4dc247',
+  },
+  {
+    name: 'instagram',
+    link: getInstLink(),
+    icn: instagram,
+    color: '#e1306c',
   }
 ]
 </script>
 
 <template>
-  <section class="contact_block">
+  <section class="contact_block" id="Contacts">
     <p class="contact-title mobile-only">Остались вопросы?</p>
     <div class="contact_background_image"></div>
     <!-- <p class="text-h4 mt-16">СДЕЛАЙ ШАГ НА ВСТРЕЧУ СЕБЕ</p> -->
@@ -54,7 +61,7 @@ const socialLink = [
 
 .action_block
   position: absolute
-  top: 25%
+  top: 20%
   right: 5%
 
   @media screen and (max-width: 900px)

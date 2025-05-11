@@ -390,6 +390,7 @@ const headerLinks = [
   {text: 'С чем могу помочь', link: '#HowCanHelp'},
   {text: 'Услуги', link: '#Services'},
   {text: 'Отзывы', link: '#Review'},
+  {text: 'Контакты', link: '#Contacts'}
 ]
 
 const aboutWorkBlocks = [
