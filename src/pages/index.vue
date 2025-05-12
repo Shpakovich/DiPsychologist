@@ -134,9 +134,13 @@
     font-style: normal;
   }
 
+   .main-title {
+     margin-bottom: 32px
+   }
+
    @media screen and (max-width: 1199.98px) {
      h2 {
-       font-size: 2.5rem !important;
+       font-size: 2rem !important;
      }
 
      .header_link {
@@ -144,7 +148,7 @@
      }
 
      .text-h2 {
-       font-size: 2.5rem !important;
+       font-size: 2rem !important;
        position: relative!important;
        z-index: 1!important;
      }
@@ -185,6 +189,18 @@
   }
 
    @media screen and (min-width: 900px) {
+     .main-info-title {
+       padding-bottom: 64px;
+     }
+     .main-btn-block {
+       margin-right: 42px;
+     }
+     .quote-text {
+       padding: 32px;
+     }
+     .service-card_content, .service-card_title {
+       width: 50%;
+     }
      .block:hover {
        .aboutBlock_image {
          filter: none
@@ -218,12 +234,16 @@
        display: none !important;
      }
 
+     .service-card_title {
+       margin-bottom: 32px
+     }
+
      .aboutMe_block {
        margin-bottom: 64px
      }
 
      h2 {
-       font-size: 2rem !important;
+       font-size: 1.8rem !important;
      }
 
      .img-about, .main-img {
@@ -272,11 +292,12 @@
      }
 
      .quote-img {
-       top: -12px!important;
+       top: -56px!important;
      }
 
      .quote-text {
        font-size: 27px!important;
+       padding: 32px 0 0 !important;
      }
 
      .name {

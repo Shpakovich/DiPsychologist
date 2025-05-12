@@ -110,7 +110,6 @@ const dialog = computed({
 
 .main-title
   font-weight: 100!important
-  margin-bottom: 32px
 
 .work-title_mobile
   position: absolute

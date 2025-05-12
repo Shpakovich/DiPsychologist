@@ -19,7 +19,6 @@ import quote from '../assets/quote.svg'
   left: 72px
 
 .quote-text
-  padding: 36px
   color: #343B4B
 
 .name

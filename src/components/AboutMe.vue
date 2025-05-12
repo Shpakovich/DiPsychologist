@@ -7,7 +7,7 @@ import squiggle1 from '../assets/vector/squiggle1.svg'
 
 <template>
   <div class="mb-12">
-    <p class="text-h2 main-title mb-3">
+    <p class="text-h2 main-title">
       ОБО МНЕ
     </p>
     <div class="about-me_block">
